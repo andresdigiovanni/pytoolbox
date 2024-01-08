@@ -13,6 +13,12 @@ validate: .pre-commit-config.yaml
 		pre-commit run --all-files; \
 	)
 
+build:
+	( \
+		source .venv/bin/activate; \
+		poetry build; \
+	)
+
 update:
 	( \
 		source .venv/bin/activate; \
