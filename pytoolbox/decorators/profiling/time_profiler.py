@@ -36,17 +36,17 @@ def print_execution_times(reverse=False):
             [
                 func_name,
                 len(times),
-                f"{average_time:.4f} seconds",
-                f"{total_function_time:.4f} seconds",
+                round(average_time, 4),
+                round(total_function_time, 4),
             ]
         )
         total_time += total_function_time
 
-    headers = ["Function", "Executions", "Average Time", "Total Time"]
+    headers = ["Function", "Executions", "Average Time (s)", "Total Time (s)"]
     table_data.sort(key=lambda x: x[2], reverse=reverse)
 
     # Add a row for total time
-    total_row = ["Total", "", "", f"{total_time:.4f} seconds"]
+    total_row = ["Total", "", "", round(total_time, 4)]
     table_data.append(total_row)
 
     print("\nExecution Time Summary:")
