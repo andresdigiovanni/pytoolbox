@@ -28,7 +28,7 @@ def process_executor(fn, input_data, *args, max_workers=None):
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures_dict = {}
         for params in input_data:
-            if isinstance(params, (list, tuple)):
+            if isinstance(params, (tuple)):
                 args_to_pass = params + args
             else:
                 args_to_pass = (params,) + args
